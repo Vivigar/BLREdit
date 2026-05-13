@@ -54,8 +54,8 @@ namespace BLREdit.API.Export
             }
         }
 
-        [JsonIgnore] public static BLRServerProperties DefaultModeProperties { get; } = new BLRServerProperties { GameRespawnTime = 1, GameForceRespawnTime = 9999, MaxIdleTime = -1, NumBots = 8, PlayerSearchTime = 5};
-        [JsonIgnore] public static BLRServerProperties DefaultOnslaughtProperties { get; } = new BLRServerProperties { GameRespawnTime = 1, GameForceRespawnTime = 9999, MaxIdleTime = -1, NumBots = 8, PlayerSearchTime = 5, TimeLimit = 9999 };
+        [JsonIgnore] public static BLRServerProperties DefaultModeProperties { get; } = new BLRServerProperties { GameRespawnTime = 1, GameForceRespawnTime = 30, MaxIdleTime = -1, NumBots = 8, PlayerSearchTime = 5};
+        [JsonIgnore] public static BLRServerProperties DefaultOnslaughtProperties { get; } = new BLRServerProperties { GameRespawnTime = 1, GameForceRespawnTime = 30, MaxIdleTime = -1, NumBots = 8, PlayerSearchTime = 5, TimeLimit = 9999 };
 
         public static Collection<BLRPlaylist> DefaultPlaylists { get; } =
         [

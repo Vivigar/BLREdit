@@ -31,6 +31,9 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -42,6 +45,12 @@
                     <TextBox Grid.Row="1" Grid.Column="1" Margin="0,2,2,2" Text="{Binding Path=Properties.MaxPlayers, Mode=TwoWay}" Foreground="#FF78AEBC" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" PreviewKeyDown="NumericTextBox_PreviewKeyDown" PreviewTextInput="NumericTextBox_PreviewTextInput"/>
                     <Label Grid.Row="2" Grid.Column="0" Margin="2,2,0,2" Content="Timelimit:" Foreground="#FF78AEBC" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
                     <TextBox Grid.Row="2" Grid.Column="1" Margin="0,2,2,2" Text="{Binding Path=Properties.TimeLimit, Mode=TwoWay}" Foreground="#FF78AEBC" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" PreviewKeyDown="NumericTextBox_PreviewKeyDown" PreviewTextInput="NumericTextBox_PreviewTextInput"/>
+                    <Label Grid.Row="3" Grid.Column="0" Margin="2,2,0,2" Content="Goal Score:" Foreground="#FF78AEBC" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Margin="0,2,2,2" Text="{Binding Path=Properties.GoalScore, Mode=TwoWay}" Foreground="#FF78AEBC" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" PreviewKeyDown="NumericTextBox_PreviewKeyDown" PreviewTextInput="NumericTextBox_PreviewTextInput"/>
+                    <Label Grid.Row="4" Grid.Column="0" Margin="2,2,0,2" Content="Respawn Timer:" Foreground="#FF78AEBC" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Margin="0,2,2,2" Text="{Binding Path=Properties.GameRespawnTime, Mode=TwoWay}" Foreground="#FF78AEBC" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" PreviewKeyDown="NumericTextBox_PreviewKeyDown" PreviewTextInput="NumericTextBox_PreviewTextInput"/>
+                    <Label Grid.Row="5" Grid.Column="0" Margin="2,2,0,2" Content="Force Respawn:" Foreground="#FF78AEBC" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                    <TextBox Grid.Row="5" Grid.Column="1" Margin="0,2,2,2" Text="{Binding Path=Properties.GameForceRespawnTime, Mode=TwoWay}" Foreground="#FF78AEBC" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" PreviewKeyDown="NumericTextBox_PreviewKeyDown" PreviewTextInput="NumericTextBox_PreviewTextInput"/>
                 </Grid>
             </Border>
         </StackPanel>
