@@ -1,6 +1,7 @@
 ﻿using BLREdit.API.Utils;
 
 using System;
+using System.Numerics;
 using System.Text.Json.Serialization;
 
 namespace BLREdit.API.REST_API.GitHub;
@@ -13,7 +14,7 @@ public sealed class GitHubRelease
     [JsonPropertyName("assets_url")] public string? AssetsURL { get; set; }
     [JsonPropertyName("upload_url")] public string? UploadURL { get; set; }
     [JsonPropertyName("html_url")] public string? HtmlURL { get; set; }
-    [JsonPropertyName("id")] public int ID { get; set; }
+    [JsonPropertyName("id")] public BigInteger ID { get; set; }
     [JsonPropertyName("author")] public GitHubUser? Author { get; set; }
     [JsonPropertyName("node_id")] public string? NodeID { get; set; }
     [JsonPropertyName("tag_name")] public string? TagName { get; set; }
@@ -27,7 +28,7 @@ public sealed class GitHubRelease
     [JsonPropertyName("tarball_url")] public string? TarballURL { get; set; }
     [JsonPropertyName("zipball_url")] public string? ZipballURL { get; set; }
     [JsonPropertyName("body")] public string? Body { get; set; }
-    [JsonPropertyName("mentions_count")] public int MentionsCount { get; set; }
+    [JsonPropertyName("mentions_count")] public BigInteger MentionsCount { get; set; }
     [JsonIgnore] private BLREditVersion? _version;
     [JsonIgnore] public BLREditVersion Version { get { _version ??= new(TagName); return _version; } }
 }

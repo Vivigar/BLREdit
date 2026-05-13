@@ -13,8 +13,6 @@ namespace BLREdit;
 
 public static class DataStorage
 {
-    public static event EventHandler? DataSaving;
-
     #region Fields
     private static ObservableCollection<BLRClient>? _gameClients;
     private static ObservableCollection<BLRServer>? _servers;
@@ -68,8 +66,6 @@ public static class DataStorage
 
     public static void Save()
     {
-        DataSaving?.Invoke(null, EventArgs.Empty);
-
         while (!IOResources.SerializeFile($"PlayerSettings.json", _profileSettings)                         && LoggingSystem.MessageLog("Failed to save Player Settings!\nMake sure no other instance of BLREdit is still running! or Antivirus that is scanning PlayerSettings.json\nPress Yes to retry or No to skip", "Info", System.Windows.MessageBoxButton.YesNo)) { };
         while (!IOResources.SerializeFile($"{IOResources.PROFILE_DIR}loadoutList.json", _shareableLoadouts) && LoggingSystem.MessageLog("Failed to save Loadout List!\nMake sure no other instance of BLREdit is still running! or Antivirus that is scanning Profiles\\loadoutList.json\nPress Yes to retry or No to skip", "Info", System.Windows.MessageBoxButton.YesNo)) { };
         while (!IOResources.SerializeFile($"GameClients.json", _gameClients)                                && LoggingSystem.MessageLog("Failed to save Game Clients!\nMake sure no other instance of BLREdit is still running! or Antivirus that is scanning GameClients.json\nPress Yes to retry or No to skip", "Info", System.Windows.MessageBoxButton.YesNo)) { };

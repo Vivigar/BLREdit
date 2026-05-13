@@ -27,17 +27,20 @@ public sealed class ServerUtilsInfo : ServerInfo
         return LoggingSystem.ObjectToTextWall(this);
     }
 
-    public string GetAllPlayerNames()
+    public string AllPlayerNames
     {
-        string players = "";
-        foreach (var team in TeamList)
+        get
         {
-            foreach(var player in team.PlayerList)
+            string players = "";
+            foreach (var team in TeamList)
             {
-                players += player.Name;
+                foreach (var player in team.PlayerList)
+                {
+                    players += player.Name;
+                }
             }
+            return players;
         }
-        return players;
     }
 
     private BLRMap? map;

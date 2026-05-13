@@ -30,7 +30,6 @@ public sealed class RESTAPIClient
         this.APIProvider = APIProvider;
         CacheFile = $"{CACHE}{IOResources.DataToBase64(IOResources.Zip($"{APIProvider}\\{baseAddress}"))}.json";
         OldRequestCache = IOResources.DeserializeFile<Dictionary<string, object>>(CacheFile) ?? [];
-        DataStorage.DataSaving += SaveCache;
     }
 
     private void SafeCacheAddOrUpdate(string api, object data, bool old = false)
@@ -138,7 +137,7 @@ public sealed class RESTAPIClient
         {
             SafeCacheAddOrUpdate(cache.Key, cache.Value, true);
         }
-        while (!IOResources.SerializeFile(CacheFile, OldRequestCache) && LoggingSystem.MessageLog("Failed to save Loadout List!\nMake sure no other instance of BLREdit is still running! or Antivirus that is scanning Profiles\\loadoutList.json\nPress Yes to retry or No to skip", "Info", System.Windows.MessageBoxButton.YesNo)) { };
+        while (!IOResources.SerializeFile(CacheFile, OldRequestCache) && LoggingSystem.MessageLog("Failed to save Web/Download Cache!\nMake sure no other instance of BLREdit is still running! or Antivirus that is scanning ModuleCache.json\nPress Yes to retry or No to skip", "Info", System.Windows.MessageBoxButton.YesNo)) { };
     }
 
     private async Task<HttpResponseMessage?> GetAsync(string api)

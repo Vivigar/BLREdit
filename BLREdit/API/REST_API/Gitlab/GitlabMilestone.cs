@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Text.Json.Serialization;
 
 namespace BLREdit.API.REST_API.Gitlab;
@@ -6,11 +7,11 @@ namespace BLREdit.API.REST_API.Gitlab;
 public sealed class GitlabMilestone
 {
     [JsonPropertyName("id")]
-    public int ID { get; set; }
+    public BigInteger ID { get; set; }
     [JsonPropertyName("iid")]
-    public int IID { get; set; }
+    public BigInteger IID { get; set; }
     [JsonPropertyName("project_id")]
-    public int ProjectID { get; set; }
+    public BigInteger ProjectID { get; set; }
     [JsonPropertyName("title")]
     public string? Title { get; set; }
     [JsonPropertyName("description")]

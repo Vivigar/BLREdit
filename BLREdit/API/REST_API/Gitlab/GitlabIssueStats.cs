@@ -1,11 +1,12 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Numerics;
+using System.Text.Json.Serialization;
 
 namespace BLREdit.API.REST_API.Gitlab;
 
 public sealed class GitlabIssueStats
 {
     [JsonPropertyName("total")]
-    public int Total { get; set; }
+    public BigInteger Total { get; set; }
     [JsonPropertyName("closed")]
-    public int Closed { get; set; }
+    public BigInteger Closed { get; set; }
 }

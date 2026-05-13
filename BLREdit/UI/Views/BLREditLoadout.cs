@@ -4,6 +4,7 @@ using BLREdit.Import;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -779,26 +780,26 @@ public sealed class BLREditLoadout : INotifyPropertyChanged
 
     private void CreateDisplay()
     {
-        HealthDisplay = Health.ToString("0.0");
-        HeadArmorDisplay = HeadProtection.ToString("0.0") + '%';
-        RunDisplay = (Run / 100.0D).ToString("0.00");
+        HealthDisplay = Health.ToString("0.0", CultureInfo.InvariantCulture);
+        HeadArmorDisplay = HeadProtection.ToString("0.0", CultureInfo.InvariantCulture) + '%';
+        RunDisplay = (Run / 100.0D).ToString("0.00", CultureInfo.InvariantCulture);
 
-        HRVDurationDisplay = HRVDuration.ToString("0.0") + 'u';
-        HRVRechargeDisplay = HRVRechargeRate.ToString("0.0") + "u/s";
-        GearSlotsDisplay = GearSlots.ToString("0");
+        HRVDurationDisplay = HRVDuration.ToString("0.0", CultureInfo.InvariantCulture) + 'u';
+        HRVRechargeDisplay = HRVRechargeRate.ToString("0.0", CultureInfo.InvariantCulture) + "u/s";
+        GearSlotsDisplay = GearSlots.ToString("0", CultureInfo.InvariantCulture);
 
-        ElectroProtectionDisplay = RawElectroProtection.ToString("0") + '%';
-        ExplosionProtectionDisplay = RawExplosiveProtection.ToString("0") + '%';
-        IncendiaryProtectionDisplay = RawIncendiaryProtection.ToString("0") + '%';
-        InfraredProtectionDisplay = RawInfraredProtection.ToString("0") + '%';
-        MeleeProtectionDisplay = RawMeleeProtection.ToString("0") + '%';
-        ToxicProtectionDisplay = RawToxicProtection.ToString("0") + '%';
-        HealthPercentageDisplay = RawHealth.ToString("0") + '%';
-        HeadArmorPercentageDisplay = (HeadProtection - 12.5).ToString("0.0") + '%';
-        RunPercentageDisplay = RawMoveSpeed.ToString("0") + '%';
-        HRVDurationPercentageDisplay = (HRVDuration - 70).ToString("0.0") + "u";
-        HRVRechargePercentageDisplay = (HRVRechargeRate - 6.6).ToString("0.0") + "u/s";
-        GearSlotsPercentageDisplay = (GearSlots - 2).ToString("0");
+        ElectroProtectionDisplay = RawElectroProtection.ToString("0", CultureInfo.InvariantCulture) + '%';
+        ExplosionProtectionDisplay = RawExplosiveProtection.ToString("0", CultureInfo.InvariantCulture) + '%';
+        IncendiaryProtectionDisplay = RawIncendiaryProtection.ToString("0", CultureInfo.InvariantCulture) + '%';
+        InfraredProtectionDisplay = RawInfraredProtection.ToString("0", CultureInfo.InvariantCulture) + '%';
+        MeleeProtectionDisplay = RawMeleeProtection.ToString("0", CultureInfo.InvariantCulture) + '%';
+        ToxicProtectionDisplay = RawToxicProtection.ToString("0", CultureInfo.InvariantCulture) + '%';
+        HealthPercentageDisplay = RawHealth.ToString("0", CultureInfo.InvariantCulture) + '%';
+        HeadArmorPercentageDisplay = (HeadProtection - 12.5).ToString("0.0", CultureInfo.InvariantCulture) + '%';
+        RunPercentageDisplay = RawMoveSpeed.ToString("0", CultureInfo.InvariantCulture) + '%';
+        HRVDurationPercentageDisplay = (HRVDuration - 70).ToString("0.0", CultureInfo.InvariantCulture) + "u";
+        HRVRechargePercentageDisplay = (HRVRechargeRate - 6.6).ToString("0.0", CultureInfo.InvariantCulture) + "u/s";
+        GearSlotsPercentageDisplay = (GearSlots - 2).ToString("0", CultureInfo.InvariantCulture);
     }
 
     public void SetLoadout(IBLRLoadout? loadout, bool registerReadBackEvent = false)

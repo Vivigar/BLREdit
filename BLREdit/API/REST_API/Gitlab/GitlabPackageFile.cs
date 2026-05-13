@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Text.Json.Serialization;
 
 namespace BLREdit.API.REST_API.Gitlab;
@@ -6,15 +7,15 @@ namespace BLREdit.API.REST_API.Gitlab;
 public class GitlabPackageFile
 {
     [JsonPropertyName("id")]
-    public int ID { get; set; }
+    public BigInteger ID { get; set; }
     [JsonPropertyName("package_id")]
-    public int PackageID { get; set; }
+    public BigInteger PackageID { get; set; }
     [JsonPropertyName("created_at")]
     public DateTime CreatedAt { get; set; }
     [JsonPropertyName("file_name")]
     public string? FileName { get; set; }
     [JsonPropertyName("size")]
-    public int Size { get; set; }
+    public BigInteger Size { get; set; }
     [JsonPropertyName("file_md5")]
     public string? FileMD5 { get; set; }
     [JsonPropertyName("file_sha1")]

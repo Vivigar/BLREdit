@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Security.Cryptography;
 using System.Text.Json.Serialization;
 
@@ -11,7 +12,7 @@ public sealed class GitlabFile
     [JsonPropertyName("file_path")]
     public string? FilePath { get; set; }
     [JsonPropertyName("size")]
-    public int Size { get; set; }
+    public BigInteger Size { get; set; }
     [JsonPropertyName("encoding")]
     public string? Encoding { get; set; }
     [JsonPropertyName("content")]

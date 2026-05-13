@@ -1,11 +1,12 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Numerics;
+using System.Text.Json.Serialization;
 
 namespace BLREdit.API.REST_API.Gitlab;
 
 public sealed class GitlabLink
 {
     [JsonPropertyName("id")]
-    public int ID { get; set; }
+    public BigInteger ID { get; set; }
     [JsonPropertyName("name")]
     public string? Name { get; set; }
     [JsonPropertyName("url")]

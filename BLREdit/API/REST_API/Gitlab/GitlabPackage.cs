@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Text.Json.Serialization;
 
 namespace BLREdit.API.REST_API.Gitlab;
@@ -8,7 +9,7 @@ public class GitlabPackage
     public string Owner { get; set; } = string.Empty;
     public string Repository { get; set; } = string.Empty;
     [JsonPropertyName("id")]
-    public int ID { get; set; }
+    public BigInteger ID { get; set; }
     [JsonPropertyName("name")]
     public string? Name { get; set; }
     [JsonPropertyName("version")]

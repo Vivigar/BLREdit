@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Numerics;
+using System.Text.Json.Serialization;
 
 namespace BLREdit.API.REST_API.GitHub;
 
@@ -7,7 +8,7 @@ public sealed class GitHubUser
     [JsonPropertyName("login")]
     public string? Login { get; set; }
     [JsonPropertyName("id")]
-    public int ID { get; set; }
+    public BigInteger ID { get; set; }
     [JsonPropertyName("node_id")]
     public string? NodeID { get; set; }
     [JsonPropertyName("avatar_url")]

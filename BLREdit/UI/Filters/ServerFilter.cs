@@ -41,7 +41,7 @@ sealed class ServerFilter : INotifyPropertyChanged
             string mdName = server.ServerInfo.GameMode?.ToUpperInvariant() ?? string.Empty;
             if (mdName.Contains(searchText)) { return true; }
 
-            string usrName = server.ServerInfo.GetAllPlayerNames()?.ToUpperInvariant() ?? string.Empty;
+            string usrName = server.ServerInfo.AllPlayerNames?.ToUpperInvariant() ?? string.Empty;
             if (usrName.Contains(searchText)) { return true; }
             return false;
         }

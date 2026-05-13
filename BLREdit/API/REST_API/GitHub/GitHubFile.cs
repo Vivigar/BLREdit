@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Text.Json.Serialization;
 
 namespace BLREdit.API.REST_API.GitHub;
@@ -10,7 +11,7 @@ public sealed class GitHubFile
     [JsonPropertyName("encoding")]
     public string? Encoding { get; set; }
     [JsonPropertyName("size")]
-    public int Size { get; set; }
+    public BigInteger Size { get; set; }
     [JsonPropertyName("name")]
     public string? Name { get; set; }
     [JsonPropertyName("path")]

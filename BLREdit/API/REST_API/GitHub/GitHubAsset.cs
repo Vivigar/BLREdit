@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Text.Json.Serialization;
 
 namespace BLREdit.API.REST_API.GitHub;
@@ -8,7 +9,7 @@ public sealed class GitHubAsset
     [JsonPropertyName("url")]
     public string? URL { get; set; }
     [JsonPropertyName("id")]
-    public int ID { get; set; }
+    public BigInteger ID { get; set; }
     [JsonPropertyName("node_id")]
     public string? NodeId { get; set; }
     [JsonPropertyName("name")]
@@ -22,9 +23,9 @@ public sealed class GitHubAsset
     [JsonPropertyName("state")]
     public string? State { get; set; }
     [JsonPropertyName("size")]
-    public int Size { get; set; }
+    public BigInteger Size { get; set; }
     [JsonPropertyName("download_count")]
-    public int DownloadCount { get; set; }
+    public BigInteger DownloadCount { get; set; }
     [JsonPropertyName("created_at")]
     public DateTime CreatedAt { get; set; }
     [JsonPropertyName("updated_at")]
