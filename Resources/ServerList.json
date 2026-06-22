@@ -212,9 +212,10 @@
     "Hidden": true
   },
   {
-    "ID": "vivigar 0",
-    "ServerAddress": "aegiworks.com",
-    "Hidden": true
+    "ID": "kensu",
+    "ServerAddress": "blr.aegiworks.com",
+    "Port": 7777,
+    "InfoPort": 7777,
   },
   {
     "ID": "akoot_ 0",
