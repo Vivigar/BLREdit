@@ -214,8 +214,7 @@
   {
     "ID": "kensu",
     "ServerAddress": "blr.aegiworks.com",
-    "Port": 7777,
-    "InfoPort": 7777,
+    "InfoPort": 7777
   },
   {
     "ID": "akoot_ 0",
